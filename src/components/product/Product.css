@@ -7,7 +7,7 @@
   padding: 20px;
   border: 1 px solid white;
   border-radius: 4px;
-  flex-basis: calc(100%4);
+  flex-basis: calc(100% / 4);
   box-shadow: 0 0 30px rgb(239, 236, 236);
 }
 .product:hover {
