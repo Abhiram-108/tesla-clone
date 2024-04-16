@@ -1,5 +1,5 @@
 [build]
   command = "npm run build"
-  publish: "/opt/build/repo/build"
+  publish: "build"
   commandOrigin: "config"
   publishOrigin: "config"
