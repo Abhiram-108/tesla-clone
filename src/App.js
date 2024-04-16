@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/header/Header'
+import Sidebar from './components/sidebar/Sidebar'
+import { useState } from 'react'
+import Backdrop from './components/backdrop/Backdrop'
 
-function App() {
+function App({ children }) {
+  const [showSidebar, setShowsidebar] = useState(false)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      {showSidebar && (
+        <>
+          {/* if showSidebar IS TRUE THEN we must apply backdrop filter to it */}
+          <Backdrop onClick={() => setShowsidebar(false)} />
+
+          <Sidebar setShowsidebar={setShowsidebar} />
+        </>
+      )}
+      <main>
+        <Header setShowsidebar={setShowsidebar} />
+
+        {children}
+      </main>
+    </>
+  )
 }
 
-export default App;
+export default App
